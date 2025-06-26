@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chạy Bot Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .status {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        textarea {
+            width: 600px;
+            height: 300px;
+            font-family: monospace;
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        button.stop {
+            background-color: #e74c3c;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .log {
+            margin-top: 30px;
+            width: 600px;
+            height: 150px;
+            background: #111;
+            color: #0f0;
+            font-family: monospace;
+            font-size: 13px;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trình chạy Bot Python</h1>
+
+    <div class="status">
+        Trạng thái bot: <strong>{{ status }}</strong>
+    </div>
+
+    <form method="post" action="/run-bot">
+        <textarea name="code" placeholder="# Dán code Python của bạn ở đây...">{{ code }}</textarea>
+
+        <div class="buttons">
+            <button type="submit">▶️ Chạy Bot</button>
+        </div>
+    </form>
+
+    <form method="post" action="/stop-bot">
+        <div class="buttons">
+            <button type="submit" class="stop">⛔ Dừng Bot</button>
+        </div>
+    </form>
+
+    <div class="log">
+        {{ log }}
+    </div>
+</body>
+</html>
