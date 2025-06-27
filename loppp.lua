@@ -5146,7 +5146,7 @@ local aa = {
     local aa, ab, ac, ad, ae = b(50)
 
     return {
-        Name               = "BrightSeaBlue",
+        Name               = "Dark",
 
         -- ★ MÀU NHẤN / VIỀN / CHỮ CHÍNH
         Accent             = Color3.fromRGB(0, 191, 255),   -- #00BFFF
